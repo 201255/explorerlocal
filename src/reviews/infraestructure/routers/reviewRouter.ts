@@ -10,4 +10,4 @@ reviewRoutes.get('/rutine', (req: Request, res: Response) => {
 })
 reviewRoutes.post('/create', createReviewController.run.bind(createReviewController))
 
-reviewRoutes.get('/list/:restaurantId', listReviewController.listAllReviews.bind(listReviewController))
+reviewRoutes.get('/list/', listReviewController.listAllReviews.bind(listReviewController))
