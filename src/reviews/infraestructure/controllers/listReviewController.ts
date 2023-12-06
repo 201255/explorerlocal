@@ -44,15 +44,15 @@ export class ReviewsController {
 
       // Verifica si el resultado es un array vacío, en lugar de verificar si es una instancia de `review`
       if (Array.isArray(restaurantRes) && restaurantRes.length > 0) {
-        return res.status(404).send({
-          status: "Not Found",
-          message: "No reviews found for the specified restaurantId"
-        });
-      } else {
         return res.status(200).send({
           status: "success",
           data: restaurantRes,
           Restaurant:response.data
+        });
+      } else {
+        return res.status(404).send({
+          status: "Not Found",
+          message: "No reviews found for the specified restaurantId"
         });
       }
     } catch (error) {
