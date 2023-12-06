@@ -25,7 +25,7 @@ export class MysqlReviewRepository implements IReviewRepository {
 
     async listAllReviews(restaurantId: number): Promise<any[]> {
       try {
-        const sql = "SELECT * FRONT reviews  WHERE restaurantId = ?";
+        const sql = "SELECT * FROM reviews  WHERE restaurantId = ?";
         const params: any[] = [restaurantId];
         const [rows]: any = await query(sql, params);
         if (rows[0]){
