@@ -2,6 +2,7 @@ import express from "express";
 import multer from "multer";
 import { ResControllerCreate,ResControllerGet,ResControllerGetId,ResControllerGetUser,ResControllerInactive,ResControllerUpdate,ResControllerImage,ResControllerLocation } from "../dependencies";
 import { validateToken } from "../../../helpers/verifyToken";
+import { Request, Response } from "express";
 export const restaurantRoute = express.Router();
 
 const storage = multer.diskStorage({
@@ -16,6 +17,10 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
+
+restaurantRoute.get('/rutine', (req: Request, res: Response) => {
+  res.status(200).send('Rutina ejecutáda con éxito');
+})
 
 restaurantRoute.post("/create-restaurant/", validateToken,upload.single('image'),ResControllerCreate.createRestaurant.bind(ResControllerCreate));
 restaurantRoute.get("/view-restaurants/", ResControllerGet.getRestaurant.bind(ResControllerGet))
