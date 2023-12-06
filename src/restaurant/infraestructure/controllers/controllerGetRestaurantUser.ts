@@ -18,7 +18,7 @@ export class RestaurantControllerGetUser {
                 throw new Error('User ID (uuid) is missing in the request parameters.');
             }
 
-            const url = `https://users.userconnectors.com/api/v1/User//${uuid}`;
+            const url = `https://gateway.userconnectors.com/api/v1/User//${uuid}`;
             const response = await axios.get(url);
 
             console.log("Request successful. Data:", response.data);
