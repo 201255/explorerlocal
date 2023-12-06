@@ -28,12 +28,13 @@ export class MysqlReviewRepository implements IReviewRepository {
         const sql = "SELECT * FRONT reviews  WHERE restaurantId = ?";
         const params: any[] = [restaurantId];
         const [rows]: any = await query(sql, params);
-    
-        return rows.map((row: any) => ({
-          id: row.id,
-          message: row.message,
-          userId: row.userId
-        }));
+        if (rows[0]){
+            return rows.map((row: any) => ({id: row.id,message: row.message,userId: row.userId}));
+        }else{
+            throw new Error('No se encontró ningún review con el restaurantId proporcionado');
+
+        }
+        
       } catch (error) {
         console.error('Error al listar revisiones:', (error as Error).message);
         throw new Error('Error al listar revisiones');
