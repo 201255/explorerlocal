@@ -13,7 +13,7 @@ export class ReviewsController {
       let restaurantId = Number(req.params.restaurantId);
 
       
-      const id = Number(req.query.restaurantId);
+      const id = Number(req.params.restaurantId);
 
       if (!restaurantId) {
           throw new Error('No se proporciono un restaurant_id.');
