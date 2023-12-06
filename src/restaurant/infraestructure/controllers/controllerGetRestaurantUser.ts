@@ -18,7 +18,7 @@ export class RestaurantControllerGetUser {
                 throw new Error('User ID (uuid) is missing in the request parameters.');
             }
 
-            const url = `http://localhost:3002/${uuid}`;
+            const url = `http://servicio1-env.eba-aikdu2nx.us-east-1.elasticbeanstalk.com/${uuid}`;
             const response = await axios.get(url);
 
             console.log("Request successful. Data:", response.data);
