@@ -32,8 +32,7 @@ export class MysqlReviewRepository implements IReviewRepository {
         return rows.map((row: any) => ({
           id: row.id,
           message: row.message,
-          userId: row.userId,
-          userInfo: row.userInfo
+          userId: row.userId
         }));
       } catch (error) {
         console.error('Error al listar revisiones:', (error as Error).message);
