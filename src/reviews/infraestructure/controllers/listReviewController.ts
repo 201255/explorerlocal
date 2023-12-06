@@ -19,7 +19,7 @@ export class ReviewsController {
           throw new Error('No se proporciono un restaurant_id.');
       }
 
-      const url = `http://serviceway-env.eba-2b4adbwi.us-east-1.elasticbeanstalk.com/api/v1/Restaurant/restaurantService/view-restaurant/${id}`;
+      const url = `http://servicio2-env.eba-yv5qtqpq.us-east-1.elasticbeanstalk.com/restaurantService/view-restaurant/${id}`;
       const response = await axios.get(url);
 
       console.log("Request successful. Data:", response.data);
