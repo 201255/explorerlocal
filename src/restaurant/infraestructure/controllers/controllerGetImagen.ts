@@ -13,7 +13,7 @@ export class getImageRestaurantController {
         const img1 = String(req.query.img1);
         //const __filename = fileURLToPath(import.meta.url);
         const __dirname = path.dirname(__filename);
-        let reqP = path.join(__dirname, "../../")
+        let reqP = path.join(__dirname, "../../../")
         console.log("data"+reqP)
         let img =reqP+`//assets//${img1}`;
 
